@@ -1,0 +1,61 @@
+C:\Python36\python.exe C:/Users/knadaraj/PycharmProjects/TCS_test/Scripts/TCS_API_Test_Script.py
+
+======================================================================
+
+Starting execution of Testcase TC1_Verify_get_response
+HTTP GET response successful
+Completing execution of Testcase TC1_Verify_get_response
+TC1_Verify_get_response Testcase execution time 0.7355821132659912
+TC1_Verify_get_response test Result : PASS
+
+======================================================================
+
+
+======================================================================
+
+Starting execution of Testcase TC2_Verify_response_data
+PASS: API response has valid JSON data
+Completing execution of Testcase TC2_Verify_response_data
+TC2_Verify_response_data Testcase execution time 0.6796107292175293
+TC2_Verify_response_data test Result : PASS
+
+======================================================================
+
+
+======================================================================
+
+Starting execution of Testcase TC3_Verify_pagination
+Response data from https://gorest.co.in/public/v1/users?access-token=xxx : {'meta': {'pagination': {'total': 1550, 'pages': 78, 'page': 1, 'limit': 20, 'links': {'previous': None, 'current': 'https://gorest.co.in/public/v1/users?page=1', 'next': 'https://gorest.co.in/public/v1/users?page=2'}}}, 'data': [{'id': 1925, 'name': 'Mann Raghvendra', 'email': 'rsbman1n@pLrf.com', 'gender': 'male', 'status': 'active'}, {'id': 6, 'name': 'Leela Bhattathiri', 'email': 'bhattathiri_leela@powlowski-kunze.net', 'gender': 'female', 'status': 'inactive'}, {'id': 7, 'name': 'Atreyee Mehra', 'email': 'mehra_atreyee@sipes.net', 'gender': 'female', 'status': 'active'}, {'id': 8, 'name': 'Rev. Hari Rana', 'email': 'rev_rana_hari@koelpin.info', 'gender': 'female', 'status': 'active'}, {'id': 9, 'name': 'Aaditya Chattopadhyay', 'email': 'chattopadhyay_aaditya@schoen.com', 'gender': 'female', 'status': 'active'}, {'id': 11, 'name': 'Prof. Vasudha Chopra', 'email': 'chopra_vasudha_prof@schowalter.biz', 'gender': 'male', 'status': 'inactive'}, {'id': 1927, 'name': 'Mann Raghvendra', 'email': 'rsbman1n@LQwo.com', 'gender': 'male', 'status': 'active'}, {'id': 13, 'name': 'Miss Rajan Nehru', 'email': 'nehru_miss_rajan@willms-blick.io', 'gender': 'female', 'status': 'inactive'}, {'id': 14, 'name': 'Balgopal Panicker VM', 'email': 'panicker_balgopal_vm@hammes.name', 'gender': 'male', 'status': 'active'}, {'id': 19, 'name': 'Atmanand Kakkar Ret.', 'email': 'ret_kakkar_atmanand@bashirian.co', 'gender': 'female', 'status': 'active'}, {'id': 20, 'name': 'Vasundhara Bhattacharya', 'email': 'vasundhara_bhattacharya@dibbert.biz', 'gender': 'female', 'status': 'inactive'}, {'id': 24, 'name': 'Chandraprabha Bhat', 'email': 'chandraprabha_bhat@murray.org', 'gender': 'female', 'status': 'inactive'}, {'id': 26, 'name': 'Narayan Chopra', 'email': 'narayan_chopra@nolan.biz', 'gender': 'male', 'status': 'inactive'}, {'id': 27, 'name': 'Kashyapi Ahuja', 'email': 'ahuja_kashyapi@hermiston.co', 'gender': 'female', 'status': 'active'}, {'id': 28, 'name': 'Draupadi Mehrotra', 'email': 'draupadi_mehrotra@hartmann.com', 'gender': 'female', 'status': 'active'}, {'id': 29, 'name': 'Asha Gill', 'email': 'gill_asha@skiles.net', 'gender': 'male', 'status': 'inactive'}, {'id': 30, 'name': 'Dipendra Ganaka', 'email': 'dipendra_ganaka@green-okeefe.biz', 'gender': 'male', 'status': 'inactive'}, {'id': 31, 'name': 'Mani Desai', 'email': 'desai_mani@rohan.name', 'gender': 'male', 'status': 'active'}, {'id': 33, 'name': 'Shantanu Panicker', 'email': 'panicker_shantanu@walsh-rau.co', 'gender': 'male', 'status': 'active'}, {'id': 34, 'name': 'Bhagwanti Talwar', 'email': 'bhagwanti_talwar@mann-stanton.biz', 'gender': 'female', 'status': 'inactive'}]}
+PASS: https://gorest.co.in/public/v1/users?access-token=xxx API response has pagination
+Completing execution of Testcase TC3_Verify_pagination
+TC3_Verify_pagination Testcase execution time 0.3068244457244873
+TC3_Verify_pagination test Result : PASS
+
+======================================================================
+
+
+======================================================================
+
+Starting execution of Testcase TC4_Verify_user_email
+Verify email in user data
+PASS: All users have valid email address
+Completing execution of Testcase TC4_Verify_user_email
+TC4_Verify_user_email Testcase execution time 0.17489910125732422
+TC4_Verify_user_email test Result : PASS
+
+======================================================================
+
+
+======================================================================
+
+Starting execution of Testcase TC5_Verify_user_data
+Verify user data attributes
+PASS: Users have similar data attributes
+Completing execution of Testcase TC5_Verify_user_data
+TC5_Verify_user_data Testcase execution time 0.4587395191192627
+TC5_Verify_user_data test Result : PASS
+
+======================================================================
+
+
+Process finished with exit code 0
