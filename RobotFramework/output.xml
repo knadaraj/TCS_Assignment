@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.6.6 on win32)" generated="20220119 11:46:20.254" rpa="false" schemaversion="2">
+<suite id="s1" name="API testcaes" source="C:\Users\knadaraj\PycharmProjects\TCS_test\Testcases\API_testcaes.robot">
+<test id="s1-t1" name="TC00_Create_HTTP_Session">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_url</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220119 11:46:26.327" level="INFO">Creating Session using : alias=api_url, url=https://gorest.co.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20220119 11:46:26.325" endtime="20220119 11:46:26.327"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>HTTP session created with ${base_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220119 11:46:26.329" level="INFO">HTTP session created with https://gorest.co.in/</msg>
+<status status="PASS" starttime="20220119 11:46:26.328" endtime="20220119 11:46:26.329"/>
+</kw>
+<doc>This test case creates HTTP session with specified url</doc>
+<status status="PASS" starttime="20220119 11:46:26.324" endtime="20220119 11:46:26.329"/>
+</test>
+<test id="s1-t2" name="TC01_Verify_get_response">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_url</arg>
+<arg>public/v1/users</arg>
+<arg>params=access-token=${token}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220119 11:46:27.128" level="INFO">GET Request : url=https://gorest.co.in/public/v1/users?access-token=xxx 
+ path_url=/public/v1/users?access-token=xxx 
+ headers={'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220119 11:46:27.128" level="INFO">GET Response : url=https://gorest.co.in/public/v1/users?access-token=xxx 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 19 Jan 2022 06:16:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'ETag': 'W/"230e539fe6c3207711a12022c6b4eec2"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': 'e279e98c-bc9e-4420-970e-ddc64c788dbb', 'X-Runtime': '0.008103', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body={"meta":{"pagination":{"total":1464,"pages":74,"page":1,"limit":20,"links":{"previous":null,"current":"https://gorest.co.in/public/v1/users?page=1","next":"https://gorest.co.in/public/v1/users?page=2"}}},"data":[{"id":4,"name":"Vrund Mehra","email":"vrund_mehra@heller.name","gender":"male","status":"inactive"},{"id":6,"name":"Mr. Darshwana Gill","email":"gill_mr_darshwana@green.name","gender":"male","status":"inactive"},{"id":7,"name":"Dhanvin Pilla CPA","email":"dhanvin_pilla_cpa@stracke.biz","gender":"female","status":"active"},{"id":8,"name":"Karan Agarwal","email":"karan_agarwal@waelchi.io","gender":"female","status":"inactive"},{"id":9,"name":"Anjushree Acharya","email":"anjushree_acharya@grimes-kshlerin.io","gender":"male","status":"active"},{"id":12,"name":"Mr. Ambar Nehru","email":"ambar_mr_nehru@grimes.net","gender":"female","status":"active"},{"id":13,"name":"Vinay Acharya","email":"vinay_acharya@graham.net","gender":"female","status":"active"},{"id":14,"name":"Vasudeva Pillai","email":"pillai_vasudeva@feeney-hickle.net","gender":"male","status":"inactive"},{"id":15,"name":"Rev. Dhanpati Chattopadhyay","email":"dhanpati_chattopadhyay_rev@dicki.co","gender":"female","status":"inactive"},{"id":16,"name":"Gatik Dhawan","email":"gatik_dhawan@gislason.com","gender":"female","status":"active"},{"id":17,"name":"Vidur Khan","email":"khan_vidur@abernathy.biz","gender":"male","status":"inactive"},{"id":18,"name":"Mangalya Dutta","email":"dutta_mangalya@ankunding.name","gender":"female","status":"active"},{"id":19,"name":"Bankimchandra Asan Ret.","email":"asan_ret_bankimchandra@hammes.co","gender":"male","status":"active"},{"id":21,"name":"Eekalabya Menon DVM","email":"eekalabya_dvm_menon@mohr-maggio.co","gender":"male","status":"active"},{"id":22,"name":"Deependra Chattopadhyay","email":"deependra_chattopadhyay@jones-predovic.io","gender":"male","status":"active"},{"id":23,"name":"The Hon. Ahilya Mishra","email":"hon_mishra_the_ahilya@farrell.net","gender":"female","status":"active"},{"id":24,"name":"Dinesh Arora I","email":"arora_dinesh_i@miller.name","gender":"male","status":"active"},{"id":25,"name":"Dhananjay Iyer","email":"iyer_dhananjay@schoen.info","gender":"male","status":"active"},{"id":26,"name":"Adinath Saini VM","email":"saini_adinath_vm@quitzon.name","gender":"female","status":"active"},{"id":27,"name":"Chandrani Menon","email":"chandrani_menon@schoen.net","gender":"female","status":"inactive"}]} 
+ </msg>
+<msg timestamp="20220119 11:46:27.129" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220119 11:46:26.335" endtime="20220119 11:46:27.129"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220119 11:46:27.129" endtime="20220119 11:46:27.131"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220119 11:46:27.134" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20220119 11:46:27.132" endtime="20220119 11:46:27.134"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.134" endtime="20220119 11:46:27.135"/>
+</kw>
+<doc>This test case verify get response code as 200</doc>
+<status status="PASS" starttime="20220119 11:46:26.333" endtime="20220119 11:46:27.135"/>
+</test>
+<test id="s1-t3" name="TC02_Verify_response_json_data">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_url</arg>
+<arg>public/v1/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220119 11:46:27.246" level="INFO">GET Request : url=https://gorest.co.in/public/v1/users 
+ path_url=/public/v1/users 
+ headers={'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220119 11:46:27.247" level="INFO">GET Response : url=https://gorest.co.in/public/v1/users 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 19 Jan 2022 06:16:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'ETag': 'W/"230e539fe6c3207711a12022c6b4eec2"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '468d949a-fdbf-4eb6-9780-0dc2175f7c12', 'X-Runtime': '0.008139', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body={"meta":{"pagination":{"total":1464,"pages":74,"page":1,"limit":20,"links":{"previous":null,"current":"https://gorest.co.in/public/v1/users?page=1","next":"https://gorest.co.in/public/v1/users?page=2"}}},"data":[{"id":4,"name":"Vrund Mehra","email":"vrund_mehra@heller.name","gender":"male","status":"inactive"},{"id":6,"name":"Mr. Darshwana Gill","email":"gill_mr_darshwana@green.name","gender":"male","status":"inactive"},{"id":7,"name":"Dhanvin Pilla CPA","email":"dhanvin_pilla_cpa@stracke.biz","gender":"female","status":"active"},{"id":8,"name":"Karan Agarwal","email":"karan_agarwal@waelchi.io","gender":"female","status":"inactive"},{"id":9,"name":"Anjushree Acharya","email":"anjushree_acharya@grimes-kshlerin.io","gender":"male","status":"active"},{"id":12,"name":"Mr. Ambar Nehru","email":"ambar_mr_nehru@grimes.net","gender":"female","status":"active"},{"id":13,"name":"Vinay Acharya","email":"vinay_acharya@graham.net","gender":"female","status":"active"},{"id":14,"name":"Vasudeva Pillai","email":"pillai_vasudeva@feeney-hickle.net","gender":"male","status":"inactive"},{"id":15,"name":"Rev. Dhanpati Chattopadhyay","email":"dhanpati_chattopadhyay_rev@dicki.co","gender":"female","status":"inactive"},{"id":16,"name":"Gatik Dhawan","email":"gatik_dhawan@gislason.com","gender":"female","status":"active"},{"id":17,"name":"Vidur Khan","email":"khan_vidur@abernathy.biz","gender":"male","status":"inactive"},{"id":18,"name":"Mangalya Dutta","email":"dutta_mangalya@ankunding.name","gender":"female","status":"active"},{"id":19,"name":"Bankimchandra Asan Ret.","email":"asan_ret_bankimchandra@hammes.co","gender":"male","status":"active"},{"id":21,"name":"Eekalabya Menon DVM","email":"eekalabya_dvm_menon@mohr-maggio.co","gender":"male","status":"active"},{"id":22,"name":"Deependra Chattopadhyay","email":"deependra_chattopadhyay@jones-predovic.io","gender":"male","status":"active"},{"id":23,"name":"The Hon. Ahilya Mishra","email":"hon_mishra_the_ahilya@farrell.net","gender":"female","status":"active"},{"id":24,"name":"Dinesh Arora I","email":"arora_dinesh_i@miller.name","gender":"male","status":"active"},{"id":25,"name":"Dhananjay Iyer","email":"iyer_dhananjay@schoen.info","gender":"male","status":"active"},{"id":26,"name":"Adinath Saini VM","email":"saini_adinath_vm@quitzon.name","gender":"female","status":"active"},{"id":27,"name":"Chandrani Menon","email":"chandrani_menon@schoen.net","gender":"female","status":"inactive"}]} 
+ </msg>
+<msg timestamp="20220119 11:46:27.248" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220119 11:46:27.138" endtime="20220119 11:46:27.248"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Verify JSON data is valid or not</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220119 11:46:27.248" endtime="20220119 11:46:27.249"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_obj}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220119 11:46:27.253" level="INFO">${json_obj} = {'meta': {'pagination': {'total': 1464, 'pages': 74, 'page': 1, 'limit': 20, 'links': {'previous': None, 'current': 'https://gorest.co.in/public/v1/users?page=1', 'next': 'https://gorest.co.in/public/...</msg>
+<status status="PASS" starttime="20220119 11:46:27.250" endtime="20220119 11:46:27.253"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>GET response have valid JSON format ${json_obj}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220119 11:46:27.253" endtime="20220119 11:46:27.257"/>
+</kw>
+<doc>This test case validates get response data is valid json</doc>
+<status status="PASS" starttime="20220119 11:46:27.137" endtime="20220119 11:46:27.258"/>
+</test>
+<test id="s1-t4" name="TC03_Verify_pagination">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_url</arg>
+<arg>public/v1/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220119 11:46:27.368" level="INFO">GET Request : url=https://gorest.co.in/public/v1/users 
+ path_url=/public/v1/users 
+ headers={'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220119 11:46:27.368" level="INFO">GET Response : url=https://gorest.co.in/public/v1/users 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 19 Jan 2022 06:16:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'ETag': 'W/"230e539fe6c3207711a12022c6b4eec2"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': 'bdd71435-5f21-4ea8-b139-384ae56f4286', 'X-Runtime': '0.008022', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body={"meta":{"pagination":{"total":1464,"pages":74,"page":1,"limit":20,"links":{"previous":null,"current":"https://gorest.co.in/public/v1/users?page=1","next":"https://gorest.co.in/public/v1/users?page=2"}}},"data":[{"id":4,"name":"Vrund Mehra","email":"vrund_mehra@heller.name","gender":"male","status":"inactive"},{"id":6,"name":"Mr. Darshwana Gill","email":"gill_mr_darshwana@green.name","gender":"male","status":"inactive"},{"id":7,"name":"Dhanvin Pilla CPA","email":"dhanvin_pilla_cpa@stracke.biz","gender":"female","status":"active"},{"id":8,"name":"Karan Agarwal","email":"karan_agarwal@waelchi.io","gender":"female","status":"inactive"},{"id":9,"name":"Anjushree Acharya","email":"anjushree_acharya@grimes-kshlerin.io","gender":"male","status":"active"},{"id":12,"name":"Mr. Ambar Nehru","email":"ambar_mr_nehru@grimes.net","gender":"female","status":"active"},{"id":13,"name":"Vinay Acharya","email":"vinay_acharya@graham.net","gender":"female","status":"active"},{"id":14,"name":"Vasudeva Pillai","email":"pillai_vasudeva@feeney-hickle.net","gender":"male","status":"inactive"},{"id":15,"name":"Rev. Dhanpati Chattopadhyay","email":"dhanpati_chattopadhyay_rev@dicki.co","gender":"female","status":"inactive"},{"id":16,"name":"Gatik Dhawan","email":"gatik_dhawan@gislason.com","gender":"female","status":"active"},{"id":17,"name":"Vidur Khan","email":"khan_vidur@abernathy.biz","gender":"male","status":"inactive"},{"id":18,"name":"Mangalya Dutta","email":"dutta_mangalya@ankunding.name","gender":"female","status":"active"},{"id":19,"name":"Bankimchandra Asan Ret.","email":"asan_ret_bankimchandra@hammes.co","gender":"male","status":"active"},{"id":21,"name":"Eekalabya Menon DVM","email":"eekalabya_dvm_menon@mohr-maggio.co","gender":"male","status":"active"},{"id":22,"name":"Deependra Chattopadhyay","email":"deependra_chattopadhyay@jones-predovic.io","gender":"male","status":"active"},{"id":23,"name":"The Hon. Ahilya Mishra","email":"hon_mishra_the_ahilya@farrell.net","gender":"female","status":"active"},{"id":24,"name":"Dinesh Arora I","email":"arora_dinesh_i@miller.name","gender":"male","status":"active"},{"id":25,"name":"Dhananjay Iyer","email":"iyer_dhananjay@schoen.info","gender":"male","status":"active"},{"id":26,"name":"Adinath Saini VM","email":"saini_adinath_vm@quitzon.name","gender":"female","status":"active"},{"id":27,"name":"Chandrani Menon","email":"chandrani_menon@schoen.net","gender":"female","status":"inactive"}]} 
+ </msg>
+<msg timestamp="20220119 11:46:27.369" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220119 11:46:27.263" endtime="20220119 11:46:27.369"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220119 11:46:27.372" level="INFO">${data} = {'meta': {'pagination': {'total': 1464, 'pages': 74, 'page': 1, 'limit': 20, 'links': {'previous': None, 'current': 'https://gorest.co.in/public/v1/users?page=1', 'next': 'https://gorest.co.in/public/...</msg>
+<status status="PASS" starttime="20220119 11:46:27.369" endtime="20220119 11:46:27.372"/>
+</kw>
+<kw name="Verify Pagination" library="keywords">
+<arg>${data}</arg>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${data}.meta</arg>
+<arg>pagination</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220119 11:46:27.373" endtime="20220119 11:46:27.375"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.373" endtime="20220119 11:46:27.375"/>
+</kw>
+<doc>This test case verifies API response has pagination</doc>
+<status status="PASS" starttime="20220119 11:46:27.259" endtime="20220119 11:46:27.376"/>
+</test>
+<test id="s1-t5" name="TC04_Verify_user_email">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_url</arg>
+<arg>public/v1/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220119 11:46:27.486" level="INFO">GET Request : url=https://gorest.co.in/public/v1/users 
+ path_url=/public/v1/users 
+ headers={'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220119 11:46:27.486" level="INFO">GET Response : url=https://gorest.co.in/public/v1/users 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 19 Jan 2022 06:16:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'ETag': 'W/"230e539fe6c3207711a12022c6b4eec2"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '703d043f-dbe8-453c-a161-f0dc8d54ebfe', 'X-Runtime': '0.007060', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body={"meta":{"pagination":{"total":1464,"pages":74,"page":1,"limit":20,"links":{"previous":null,"current":"https://gorest.co.in/public/v1/users?page=1","next":"https://gorest.co.in/public/v1/users?page=2"}}},"data":[{"id":4,"name":"Vrund Mehra","email":"vrund_mehra@heller.name","gender":"male","status":"inactive"},{"id":6,"name":"Mr. Darshwana Gill","email":"gill_mr_darshwana@green.name","gender":"male","status":"inactive"},{"id":7,"name":"Dhanvin Pilla CPA","email":"dhanvin_pilla_cpa@stracke.biz","gender":"female","status":"active"},{"id":8,"name":"Karan Agarwal","email":"karan_agarwal@waelchi.io","gender":"female","status":"inactive"},{"id":9,"name":"Anjushree Acharya","email":"anjushree_acharya@grimes-kshlerin.io","gender":"male","status":"active"},{"id":12,"name":"Mr. Ambar Nehru","email":"ambar_mr_nehru@grimes.net","gender":"female","status":"active"},{"id":13,"name":"Vinay Acharya","email":"vinay_acharya@graham.net","gender":"female","status":"active"},{"id":14,"name":"Vasudeva Pillai","email":"pillai_vasudeva@feeney-hickle.net","gender":"male","status":"inactive"},{"id":15,"name":"Rev. Dhanpati Chattopadhyay","email":"dhanpati_chattopadhyay_rev@dicki.co","gender":"female","status":"inactive"},{"id":16,"name":"Gatik Dhawan","email":"gatik_dhawan@gislason.com","gender":"female","status":"active"},{"id":17,"name":"Vidur Khan","email":"khan_vidur@abernathy.biz","gender":"male","status":"inactive"},{"id":18,"name":"Mangalya Dutta","email":"dutta_mangalya@ankunding.name","gender":"female","status":"active"},{"id":19,"name":"Bankimchandra Asan Ret.","email":"asan_ret_bankimchandra@hammes.co","gender":"male","status":"active"},{"id":21,"name":"Eekalabya Menon DVM","email":"eekalabya_dvm_menon@mohr-maggio.co","gender":"male","status":"active"},{"id":22,"name":"Deependra Chattopadhyay","email":"deependra_chattopadhyay@jones-predovic.io","gender":"male","status":"active"},{"id":23,"name":"The Hon. Ahilya Mishra","email":"hon_mishra_the_ahilya@farrell.net","gender":"female","status":"active"},{"id":24,"name":"Dinesh Arora I","email":"arora_dinesh_i@miller.name","gender":"male","status":"active"},{"id":25,"name":"Dhananjay Iyer","email":"iyer_dhananjay@schoen.info","gender":"male","status":"active"},{"id":26,"name":"Adinath Saini VM","email":"saini_adinath_vm@quitzon.name","gender":"female","status":"active"},{"id":27,"name":"Chandrani Menon","email":"chandrani_menon@schoen.net","gender":"female","status":"inactive"}]} 
+ </msg>
+<msg timestamp="20220119 11:46:27.487" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220119 11:46:27.379" endtime="20220119 11:46:27.487"/>
+</kw>
+<kw name="Verify Valid Email" library="keywords">
+<arg>${response.json()}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${users}</var>
+<arg>${data}</arg>
+<arg>$.data</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220119 11:46:27.540" level="INFO">${users} = [[{'id': 4, 'name': 'Vrund Mehra', 'email': 'vrund_mehra@heller.name', 'gender': 'male', 'status': 'inactive'}, {'id': 6, 'name': 'Mr. Darshwana Gill', 'email': 'gill_mr_darshwana@green.name', 'gender...</msg>
+<status status="PASS" starttime="20220119 11:46:27.489" endtime="20220119 11:46:27.540"/>
+</kw>
+<for flavor="IN">
+<var>${user}</var>
+<value>@{users}[0]</value>
+<iter>
+<var name="${user}">{'id': 4, 'name': 'Vrund Mehra', 'email': 'vrund_mehra@heller.name', 'gender': 'male', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.541" level="INFO">${email} = vrund_mehra@heller.name</msg>
+<status status="PASS" starttime="20220119 11:46:27.541" endtime="20220119 11:46:27.541"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.543" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.542" endtime="20220119 11:46:27.543"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.544" endtime="20220119 11:46:27.544"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.543" endtime="20220119 11:46:27.544"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.541" endtime="20220119 11:46:27.544"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 6, 'name': 'Mr. Darshwana Gill', 'email': 'gill_mr_darshwana@green.name', 'gender': 'male', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.546" level="INFO">${email} = gill_mr_darshwana@green.name</msg>
+<status status="PASS" starttime="20220119 11:46:27.545" endtime="20220119 11:46:27.546"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.547" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.546" endtime="20220119 11:46:27.547"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.547" endtime="20220119 11:46:27.548"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.547" endtime="20220119 11:46:27.548"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.544" endtime="20220119 11:46:27.548"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 7, 'name': 'Dhanvin Pilla CPA', 'email': 'dhanvin_pilla_cpa@stracke.biz', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.548" level="INFO">${email} = dhanvin_pilla_cpa@stracke.biz</msg>
+<status status="PASS" starttime="20220119 11:46:27.548" endtime="20220119 11:46:27.548"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.549" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.549" endtime="20220119 11:46:27.549"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.549" endtime="20220119 11:46:27.550"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.549" endtime="20220119 11:46:27.550"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.548" endtime="20220119 11:46:27.550"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 8, 'name': 'Karan Agarwal', 'email': 'karan_agarwal@waelchi.io', 'gender': 'female', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.551" level="INFO">${email} = karan_agarwal@waelchi.io</msg>
+<status status="PASS" starttime="20220119 11:46:27.550" endtime="20220119 11:46:27.551"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.552" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.551" endtime="20220119 11:46:27.552"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.553" endtime="20220119 11:46:27.554"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.552" endtime="20220119 11:46:27.554"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.550" endtime="20220119 11:46:27.554"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 9, 'name': 'Anjushree Acharya', 'email': 'anjushree_acharya@grimes-kshlerin.io', 'gender': 'male', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.555" level="INFO">${email} = anjushree_acharya@grimes-kshlerin.io</msg>
+<status status="PASS" starttime="20220119 11:46:27.554" endtime="20220119 11:46:27.555"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.555" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.555" endtime="20220119 11:46:27.555"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.556" endtime="20220119 11:46:27.556"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.555" endtime="20220119 11:46:27.557"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.554" endtime="20220119 11:46:27.557"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 12, 'name': 'Mr. Ambar Nehru', 'email': 'ambar_mr_nehru@grimes.net', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.558" level="INFO">${email} = ambar_mr_nehru@grimes.net</msg>
+<status status="PASS" starttime="20220119 11:46:27.557" endtime="20220119 11:46:27.558"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.558" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.558" endtime="20220119 11:46:27.558"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.559" endtime="20220119 11:46:27.559"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.558" endtime="20220119 11:46:27.559"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.557" endtime="20220119 11:46:27.559"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 13, 'name': 'Vinay Acharya', 'email': 'vinay_acharya@graham.net', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.562" level="INFO">${email} = vinay_acharya@graham.net</msg>
+<status status="PASS" starttime="20220119 11:46:27.560" endtime="20220119 11:46:27.562"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.563" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.562" endtime="20220119 11:46:27.563"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.563" endtime="20220119 11:46:27.564"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.563" endtime="20220119 11:46:27.564"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.559" endtime="20220119 11:46:27.564"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 14, 'name': 'Vasudeva Pillai', 'email': 'pillai_vasudeva@feeney-hickle.net', 'gender': 'male', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.565" level="INFO">${email} = pillai_vasudeva@feeney-hickle.net</msg>
+<status status="PASS" starttime="20220119 11:46:27.565" endtime="20220119 11:46:27.566"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.566" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.566" endtime="20220119 11:46:27.566"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.569" endtime="20220119 11:46:27.569"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.567" endtime="20220119 11:46:27.570"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.564" endtime="20220119 11:46:27.570"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 15, 'name': 'Rev. Dhanpati Chattopadhyay', 'email': 'dhanpati_chattopadhyay_rev@dicki.co', 'gender': 'female', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.571" level="INFO">${email} = dhanpati_chattopadhyay_rev@dicki.co</msg>
+<status status="PASS" starttime="20220119 11:46:27.570" endtime="20220119 11:46:27.571"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.572" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.571" endtime="20220119 11:46:27.572"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.572" endtime="20220119 11:46:27.573"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.572" endtime="20220119 11:46:27.573"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.570" endtime="20220119 11:46:27.573"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 16, 'name': 'Gatik Dhawan', 'email': 'gatik_dhawan@gislason.com', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.574" level="INFO">${email} = gatik_dhawan@gislason.com</msg>
+<status status="PASS" starttime="20220119 11:46:27.573" endtime="20220119 11:46:27.574"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.574" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.574" endtime="20220119 11:46:27.574"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.576" endtime="20220119 11:46:27.577"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.575" endtime="20220119 11:46:27.577"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.573" endtime="20220119 11:46:27.577"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 17, 'name': 'Vidur Khan', 'email': 'khan_vidur@abernathy.biz', 'gender': 'male', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.578" level="INFO">${email} = khan_vidur@abernathy.biz</msg>
+<status status="PASS" starttime="20220119 11:46:27.577" endtime="20220119 11:46:27.578"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.578" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.578" endtime="20220119 11:46:27.578"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.579" endtime="20220119 11:46:27.579"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.578" endtime="20220119 11:46:27.579"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.577" endtime="20220119 11:46:27.579"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 18, 'name': 'Mangalya Dutta', 'email': 'dutta_mangalya@ankunding.name', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.580" level="INFO">${email} = dutta_mangalya@ankunding.name</msg>
+<status status="PASS" starttime="20220119 11:46:27.580" endtime="20220119 11:46:27.580"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.581" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.580" endtime="20220119 11:46:27.581"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.581" endtime="20220119 11:46:27.582"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.581" endtime="20220119 11:46:27.582"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.580" endtime="20220119 11:46:27.582"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 19, 'name': 'Bankimchandra Asan Ret.', 'email': 'asan_ret_bankimchandra@hammes.co', 'gender': 'male', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.583" level="INFO">${email} = asan_ret_bankimchandra@hammes.co</msg>
+<status status="PASS" starttime="20220119 11:46:27.582" endtime="20220119 11:46:27.583"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.583" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.583" endtime="20220119 11:46:27.583"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.584" endtime="20220119 11:46:27.585"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.583" endtime="20220119 11:46:27.585"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.582" endtime="20220119 11:46:27.585"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 21, 'name': 'Eekalabya Menon DVM', 'email': 'eekalabya_dvm_menon@mohr-maggio.co', 'gender': 'male', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.586" level="INFO">${email} = eekalabya_dvm_menon@mohr-maggio.co</msg>
+<status status="PASS" starttime="20220119 11:46:27.586" endtime="20220119 11:46:27.587"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.587" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.587" endtime="20220119 11:46:27.588"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.588" endtime="20220119 11:46:27.589"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.588" endtime="20220119 11:46:27.589"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.585" endtime="20220119 11:46:27.589"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 22, 'name': 'Deependra Chattopadhyay', 'email': 'deependra_chattopadhyay@jones-predovic.io', 'gender': 'male', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.591" level="INFO">${email} = deependra_chattopadhyay@jones-predovic.io</msg>
+<status status="PASS" starttime="20220119 11:46:27.590" endtime="20220119 11:46:27.591"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.592" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.592" endtime="20220119 11:46:27.592"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.593" endtime="20220119 11:46:27.594"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.593" endtime="20220119 11:46:27.594"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.589" endtime="20220119 11:46:27.594"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 23, 'name': 'The Hon. Ahilya Mishra', 'email': 'hon_mishra_the_ahilya@farrell.net', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.595" level="INFO">${email} = hon_mishra_the_ahilya@farrell.net</msg>
+<status status="PASS" starttime="20220119 11:46:27.594" endtime="20220119 11:46:27.595"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.596" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.596" endtime="20220119 11:46:27.596"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.597" endtime="20220119 11:46:27.598"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.596" endtime="20220119 11:46:27.598"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.594" endtime="20220119 11:46:27.598"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 24, 'name': 'Dinesh Arora I', 'email': 'arora_dinesh_i@miller.name', 'gender': 'male', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.599" level="INFO">${email} = arora_dinesh_i@miller.name</msg>
+<status status="PASS" starttime="20220119 11:46:27.598" endtime="20220119 11:46:27.599"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.600" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.599" endtime="20220119 11:46:27.600"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.601" endtime="20220119 11:46:27.602"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.600" endtime="20220119 11:46:27.602"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.598" endtime="20220119 11:46:27.602"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 25, 'name': 'Dhananjay Iyer', 'email': 'iyer_dhananjay@schoen.info', 'gender': 'male', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.604" level="INFO">${email} = iyer_dhananjay@schoen.info</msg>
+<status status="PASS" starttime="20220119 11:46:27.603" endtime="20220119 11:46:27.604"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.605" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.604" endtime="20220119 11:46:27.605"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.607" endtime="20220119 11:46:27.608"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.606" endtime="20220119 11:46:27.608"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.602" endtime="20220119 11:46:27.608"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 26, 'name': 'Adinath Saini VM', 'email': 'saini_adinath_vm@quitzon.name', 'gender': 'female', 'status': 'active'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.610" level="INFO">${email} = saini_adinath_vm@quitzon.name</msg>
+<status status="PASS" starttime="20220119 11:46:27.609" endtime="20220119 11:46:27.610"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.611" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.610" endtime="20220119 11:46:27.611"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.612" endtime="20220119 11:46:27.612"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.611" endtime="20220119 11:46:27.612"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.608" endtime="20220119 11:46:27.612"/>
+</iter>
+<iter>
+<var name="${user}">{'id': 27, 'name': 'Chandrani Menon', 'email': 'chandrani_menon@schoen.net', 'gender': 'female', 'status': 'inactive'}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${email}</var>
+<arg>${user}.get("email"," ")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220119 11:46:27.613" level="INFO">${email} = chandrani_menon@schoen.net</msg>
+<status status="PASS" starttime="20220119 11:46:27.612" endtime="20220119 11:46:27.613"/>
+</kw>
+<kw name="Validate Email" library="TCS_lib">
+<var>${resp}</var>
+<arg>${email}</arg>
+<msg timestamp="20220119 11:46:27.613" level="INFO">${resp} = True</msg>
+<status status="PASS" starttime="20220119 11:46:27.613" endtime="20220119 11:46:27.614"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>should be equal</arg>
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.614" endtime="20220119 11:46:27.615"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.614" endtime="20220119 11:46:27.615"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.612" endtime="20220119 11:46:27.615"/>
+</iter>
+<status status="PASS" starttime="20220119 11:46:27.540" endtime="20220119 11:46:27.615"/>
+</for>
+<status status="PASS" starttime="20220119 11:46:27.488" endtime="20220119 11:46:27.615"/>
+</kw>
+<doc>This test case will verify email address availability in user data</doc>
+<status status="PASS" starttime="20220119 11:46:27.378" endtime="20220119 11:46:27.616"/>
+</test>
+<test id="s1-t6" name="TC05_Verify_user_data">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_url</arg>
+<arg>public/v1/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220119 11:46:27.729" level="INFO">GET Request : url=https://gorest.co.in/public/v1/users 
+ path_url=/public/v1/users 
+ headers={'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220119 11:46:27.729" level="INFO">GET Response : url=https://gorest.co.in/public/v1/users 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 19 Jan 2022 06:16:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'ETag': 'W/"230e539fe6c3207711a12022c6b4eec2"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '12869297-a8a4-4820-8c40-e6ec771b3425', 'X-Runtime': '0.008337', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body={"meta":{"pagination":{"total":1464,"pages":74,"page":1,"limit":20,"links":{"previous":null,"current":"https://gorest.co.in/public/v1/users?page=1","next":"https://gorest.co.in/public/v1/users?page=2"}}},"data":[{"id":4,"name":"Vrund Mehra","email":"vrund_mehra@heller.name","gender":"male","status":"inactive"},{"id":6,"name":"Mr. Darshwana Gill","email":"gill_mr_darshwana@green.name","gender":"male","status":"inactive"},{"id":7,"name":"Dhanvin Pilla CPA","email":"dhanvin_pilla_cpa@stracke.biz","gender":"female","status":"active"},{"id":8,"name":"Karan Agarwal","email":"karan_agarwal@waelchi.io","gender":"female","status":"inactive"},{"id":9,"name":"Anjushree Acharya","email":"anjushree_acharya@grimes-kshlerin.io","gender":"male","status":"active"},{"id":12,"name":"Mr. Ambar Nehru","email":"ambar_mr_nehru@grimes.net","gender":"female","status":"active"},{"id":13,"name":"Vinay Acharya","email":"vinay_acharya@graham.net","gender":"female","status":"active"},{"id":14,"name":"Vasudeva Pillai","email":"pillai_vasudeva@feeney-hickle.net","gender":"male","status":"inactive"},{"id":15,"name":"Rev. Dhanpati Chattopadhyay","email":"dhanpati_chattopadhyay_rev@dicki.co","gender":"female","status":"inactive"},{"id":16,"name":"Gatik Dhawan","email":"gatik_dhawan@gislason.com","gender":"female","status":"active"},{"id":17,"name":"Vidur Khan","email":"khan_vidur@abernathy.biz","gender":"male","status":"inactive"},{"id":18,"name":"Mangalya Dutta","email":"dutta_mangalya@ankunding.name","gender":"female","status":"active"},{"id":19,"name":"Bankimchandra Asan Ret.","email":"asan_ret_bankimchandra@hammes.co","gender":"male","status":"active"},{"id":21,"name":"Eekalabya Menon DVM","email":"eekalabya_dvm_menon@mohr-maggio.co","gender":"male","status":"active"},{"id":22,"name":"Deependra Chattopadhyay","email":"deependra_chattopadhyay@jones-predovic.io","gender":"male","status":"active"},{"id":23,"name":"The Hon. Ahilya Mishra","email":"hon_mishra_the_ahilya@farrell.net","gender":"female","status":"active"},{"id":24,"name":"Dinesh Arora I","email":"arora_dinesh_i@miller.name","gender":"male","status":"active"},{"id":25,"name":"Dhananjay Iyer","email":"iyer_dhananjay@schoen.info","gender":"male","status":"active"},{"id":26,"name":"Adinath Saini VM","email":"saini_adinath_vm@quitzon.name","gender":"female","status":"active"},{"id":27,"name":"Chandrani Menon","email":"chandrani_menon@schoen.net","gender":"female","status":"inactive"}]} 
+ </msg>
+<msg timestamp="20220119 11:46:27.729" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220119 11:46:27.620" endtime="20220119 11:46:27.729"/>
+</kw>
+<kw name="Verify Users data" library="keywords">
+<arg>${response.json()}</arg>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${users}</var>
+<arg>${data}</arg>
+<arg>$.data</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220119 11:46:27.778" level="INFO">${users} = [[{'id': 4, 'name': 'Vrund Mehra', 'email': 'vrund_mehra@heller.name', 'gender': 'male', 'status': 'inactive'}, {'id': 6, 'name': 'Mr. Darshwana Gill', 'email': 'gill_mr_darshwana@green.name', 'gender...</msg>
+<status status="PASS" starttime="20220119 11:46:27.731" endtime="20220119 11:46:27.778"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${users_count}</var>
+<arg>${users}[0]</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220119 11:46:27.779" level="INFO">Length is 20</msg>
+<msg timestamp="20220119 11:46:27.780" level="INFO">${users_count} = 20</msg>
+<status status="PASS" starttime="20220119 11:46:27.779" endtime="20220119 11:46:27.780"/>
+</kw>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${user_keys}</var>
+<arg>${users}[0][0]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.781" level="INFO">${user_keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.780" endtime="20220119 11:46:27.781"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${user_keys}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220119 11:46:27.781" endtime="20220119 11:46:27.782"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${users_count}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.784" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.783" endtime="20220119 11:46:27.785"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.786" endtime="20220119 11:46:27.787"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.782" endtime="20220119 11:46:27.787"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.789" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.788" endtime="20220119 11:46:27.789"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.789" endtime="20220119 11:46:27.790"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.787" endtime="20220119 11:46:27.790"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.791" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.790" endtime="20220119 11:46:27.791"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.791" endtime="20220119 11:46:27.792"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.790" endtime="20220119 11:46:27.792"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.793" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.793" endtime="20220119 11:46:27.793"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.793" endtime="20220119 11:46:27.794"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.792" endtime="20220119 11:46:27.794"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.795" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.794" endtime="20220119 11:46:27.795"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.795" endtime="20220119 11:46:27.795"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.794" endtime="20220119 11:46:27.795"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.796" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.796" endtime="20220119 11:46:27.796"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.796" endtime="20220119 11:46:27.797"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.795" endtime="20220119 11:46:27.797"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.797" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.797" endtime="20220119 11:46:27.797"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.798" endtime="20220119 11:46:27.798"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.797" endtime="20220119 11:46:27.798"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.799" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.798" endtime="20220119 11:46:27.799"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.799" endtime="20220119 11:46:27.800"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.798" endtime="20220119 11:46:27.800"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.802" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.801" endtime="20220119 11:46:27.802"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.803" endtime="20220119 11:46:27.804"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.801" endtime="20220119 11:46:27.804"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.805" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.804" endtime="20220119 11:46:27.805"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.805" endtime="20220119 11:46:27.806"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.804" endtime="20220119 11:46:27.806"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.807" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.807" endtime="20220119 11:46:27.807"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.807" endtime="20220119 11:46:27.808"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.807" endtime="20220119 11:46:27.808"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.809" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.808" endtime="20220119 11:46:27.809"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.809" endtime="20220119 11:46:27.809"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.808" endtime="20220119 11:46:27.809"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.810" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.810" endtime="20220119 11:46:27.810"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.810" endtime="20220119 11:46:27.811"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.810" endtime="20220119 11:46:27.811"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.812" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.811" endtime="20220119 11:46:27.812"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.812" endtime="20220119 11:46:27.812"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.811" endtime="20220119 11:46:27.812"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.814" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.813" endtime="20220119 11:46:27.814"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.814" endtime="20220119 11:46:27.816"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.812" endtime="20220119 11:46:27.816"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.818" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.817" endtime="20220119 11:46:27.818"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.818" endtime="20220119 11:46:27.820"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.816" endtime="20220119 11:46:27.820"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.822" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.821" endtime="20220119 11:46:27.822"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.822" endtime="20220119 11:46:27.823"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.820" endtime="20220119 11:46:27.824"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.825" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.824" endtime="20220119 11:46:27.825"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.826" endtime="20220119 11:46:27.826"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.824" endtime="20220119 11:46:27.826"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.827" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.827" endtime="20220119 11:46:27.827"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.827" endtime="20220119 11:46:27.828"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.826" endtime="20220119 11:46:27.828"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Get Dictionary Keys" library="Collections">
+<var>${keys}</var>
+<arg>${users}[0][${i}]</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<msg timestamp="20220119 11:46:27.828" level="INFO">${keys} = ['email', 'gender', 'id', 'name', 'status']</msg>
+<status status="PASS" starttime="20220119 11:46:27.828" endtime="20220119 11:46:27.829"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${user_keys}</arg>
+<arg>${keys}</arg>
+<arg>ignore_order=True</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220119 11:46:27.829" endtime="20220119 11:46:27.829"/>
+</kw>
+<status status="PASS" starttime="20220119 11:46:27.828" endtime="20220119 11:46:27.829"/>
+</iter>
+<status status="PASS" starttime="20220119 11:46:27.782" endtime="20220119 11:46:27.829"/>
+</for>
+<status status="PASS" starttime="20220119 11:46:27.730" endtime="20220119 11:46:27.829"/>
+</kw>
+<doc>This test case will verify all users data attributes are similar</doc>
+<status status="PASS" starttime="20220119 11:46:27.618" endtime="20220119 11:46:27.832"/>
+</test>
+<doc>This script used to test an API
+Verification of Functional and non functional test cases</doc>
+<status status="PASS" starttime="20220119 11:46:20.262" endtime="20220119 11:46:27.836"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="API testcaes">API testcaes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
